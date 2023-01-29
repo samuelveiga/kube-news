@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: webApp
+  labels:
+    cor: azul
+spec:
+  containers:
+  - name: site
+    image: samuelveiga/cube-news
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: Postgre
+  labels:
+    cor: verde
+spec:
+  containers:
+  - name: banco
+    image: samuelveiga/Postgres
+    ports:
+    - containerPort: 5434

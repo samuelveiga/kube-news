@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: meureplicaset
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webApp
+  template:
+    metadata: 
+      labels:
+        app: webApp
+    spec:
+      containers:
+      - name: site
+        image: samuelveiga/cube-news:v1
+        ports:
+        - containerPort: 80
